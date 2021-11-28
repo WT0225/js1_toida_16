@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+
+</head>
+<body>
+
+<!-- ↓↓基本形 -->
+
+<!-- <title>じゃんけん</title>
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn">グー</li>
+    <li id="cho_btn">チョキ</li>
+    <li id="par_btn">パー</li>
+  </ul>
+  <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+  <div id="judgement">??</div>
+</main>
+
+<footer></footer> -->
+
+<!-- ↑↑基本形 -->
+
+
+<!-- ↓↓F1改造 -->
+
+<header>
+  <h1>Formula 1 God-knows Grand Prix</h1>
+</header>
+
+<main>
+<p class="subtitle">Choose your machine and beat CPU!</p>
+
+<div class="main-area">
+
+  <div class="driver-area">
+    <p class="driver-title">Today's Challenger</p>
+    <img src="./img/your-suit.jpeg" alt="" class="max-image">
+    <p class="max"> YOU </p>
+  </div>
+
+  <div class="select-title-area">
+    <p class="select-title">Choose your machine</p>
+  </div>
+  
+  <ul class="machine-select">
+
+    <li class="select-area">
+        <img src="./img/Redbull_Honda_image.jpeg" alt="" class="machine-image">
+        <a href="#" class="button">Redbull Honda</a>
+    </li>
+    
+    <li class="select-area">
+      <img src="./img/Ferrari_image.jpeg" alt="" class="machine-image">
+      <a href="#" class="button">Squderia Ferrari</a>
+    </li>
+    
+    <li class="select-area">
+      <img src="./img/Mercedez_image.jpeg" alt="" class="machine-image">
+      <a href="#" class="button">Merecedez AMG</a>
+    </li>
+    
+    <li class="select-area">
+      <img src="./img/Alpine_image.jpeg" alt="" class="machine-image">
+      <a href="#" class="button">Alpine Renault</a>
+    </li>
+    
+    <li class="select-area">
+      <img src="./img/mclaren_image.jpeg" alt="" class="machine-image">
+      <a href="#" class="button">McLaren Mercedez</a>
+    </li>
+
+  </ul>
+
+  <div class="driver-area">
+    <p class="driver-title">CPU Driver</p>
+    <img src="./img/max-verstappen-red-bull-racing-2020-reveal.jpeg" alt="" class="max-image">
+    <p class="max">Max Verstappen</p>
+  </div>
+
+</div>
+
+<div class="time-area">
+    <p class="time" >Your Time : </p>
+    <p class="record" id="your_time"> ???? Sec. </p>
+    <p class="time">CPU Time : </p>
+    <p class="record" id="cpu_time"> ???? Sec. </p>
+</div>
+
+<p class="result">Ready?</p>
+
+</main>
+
+
+
+<script>
+//じゃんけん用のSCRIPTを書いてください
+// ①ボタンを押されたら実行②コンピュータの出した手を計算、表示③勝ち負けを判定④judgementに勝敗を表示
+// pc handsで書き換える？  ボタンとクリックアクション？ 
+// https://mil-gsacademy.sakura.ne.jp/15_takeuchi/js1_takeuchi_15/menu.html
+
+
+// ↓↓基本形
+
+// $("#gu_btn").on("click", function(){
+//   let cpu =  Math.floor(Math.random() * 3 + 1)
+//   if (cpu == 1){
+//     $("#pc_hands").html("グー")
+//     $("#judgement").html("aiko")
+// }else if (cpu == 2){
+//   $("#pc_hands").html("チョキ")
+//   $("#judgement").html("WIN")
+// }else if (cpu == 3){
+//   $("#pc_hands").html("パー")
+//   $("#judgement").html("LOSE")}
+// });
+    
+// $("#cho_btn").on("click", function(){
+//   let cpu =  Math.floor(Math.random() * 3 + 1)
+//   if (cpu == 1){
+//     $("#pc_hands").html("グー")
+//     $("#judgement").html("LOSE")
+// }else if (cpu == 2){
+//   $("#pc_hands").html("チョキ")
+//   $("#judgement").html("aiko")
+// }else if (cpu == 3){
+//   $("#pc_hands").html("パー")
+//   $("#judgement").html("WIN")}
+// });   
+
+
+// $("#par_btn").on("click", function(){
+//   let cpu =  Math.floor(Math.random() * 3 + 1)
+//   if (cpu == 1){
+//     $("#pc_hands").html("グー")
+//     $("#judgement").html("WIN")
+// }else if (cpu == 2){
+//   $("#pc_hands").html("チョキ")
+//   $("#judgement").html("LOSE")
+// }else if (cpu == 3){
+//   $("#pc_hands").html("パー")
+//   $("#judgement").html("aiko")}
+// });  
+    
+// ↑↑基本形
+
+$(".button").on("click", function(){
+  let you = Math.random()*60
+  $("#your_time").html(you + " Sec.")
+  let cpu = Math.random()*60
+  $("#cpu_time").html(cpu + " Sec.")
+  
+  if (you > cpu){
+    $(".result").html("Nice one! You won!");
+  } else {$(".result").html("It wasn't your time, keep trying!");
+  }
+});
+
+
+</script>
+</body>
+</html>
